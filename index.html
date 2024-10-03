@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMD System Operation Schematics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UMD System Operation</h1>
+        <p>Toggle between different operational scenarios to see how the UMD system behaves.</p>
+
+        <!-- Toggle Buttons -->
+        <div class="toggle-button">
+            <button id="regularBtn" class="toggle active">Regular Maintenance</button>
+            <button id="shortageBtn" class="toggle">Power Shortage</button>
+        </div>
+
+        <!-- Diagram Container -->
+        <div id="diagramContainer" class="diagram">
+            <!-- Regular Maintenance Diagram -->
+            <div id="regularDiagram" class="diagram-view">
+                <!-- Regular Maintenance Components -->
+                <div class="component mains">Mains Power</div>
+                <div class="arrow down"></div>
+                <div class="component umd">UMD</div>
+                <div class="arrow right"></div>
+                <div class="component vfd">VFD</div>
+                <div class="arrow right"></div>
+                <div class="component motor">Motor</div>
+                <div class="arrow down battery-standby"></div>
+                <div class="component battery">Battery<br>(Standby Mode)</div>
+            </div>
+
+            <!-- Power Shortage Diagram -->
+            <div id="shortageDiagram" class="diagram-view" style="display: none;">
+                <!-- Power Shortage Components -->
+                <div class="component mains-disconnected">Mains Power (Disconnected)</div>
+                <div class="arrow down"></div>
+                <div class="component umd">UMD</div>
+                <div class="arrow right"></div>
+                <div class="component vfd">VFD</div>
+                <div class="arrow right"></div>
+                <div class="component motor">Motor</div>
+                <div class="arrow up battery-active"></div>
+                <div class="component battery">Battery<br>(Active Supply)</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
